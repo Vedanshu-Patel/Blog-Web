@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+const PORT = process.env.PORT || 3000;
 let BodyParser=require('body-parser');
 let mongoose = require('mongoose');
 let methodOverride= require('method-override');
@@ -103,6 +104,6 @@ app.delete("/blogs/:id",function (req, res){
 });
 
 
-app.listen(2626, function(req,res){
+app.listen(PORT, function(req,res){
     console.log("The BlogApp is Running!");
 });
