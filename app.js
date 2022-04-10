@@ -8,6 +8,7 @@ mongoose.connect("mongodb://localhost:27017/BlogApp");
 
 app.use(express.static("public"));
 app.use(BodyParser.urlencoded({ extended: false }));
+app.use(BodyParser.json());
 app.use(methodOverride("_method"));
 // Defining database schema
 let BlogSchema=new mongoose.Schema({
