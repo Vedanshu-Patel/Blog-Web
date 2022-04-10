@@ -4,7 +4,19 @@ const PORT = process.env.PORT || 3000;
 let BodyParser=require('body-parser');
 let mongoose = require('mongoose');
 let methodOverride= require('method-override');
-mongoose.connect("mongodb://localhost:27017/BlogApp");
+mongoose.connect("mongodb://localhost:27017/BlogApp",{
+    useNewUrlParser: true,
+    useUnifiedTopology:true,
+    useCreateIndex:true
+
+
+}).then(()=> {
+    console.log("connection successful");
+
+}).catch((e) =>{
+    console.log("error")
+
+})
 
 app.use(express.static("public"));
 app.use(BodyParser.urlencoded({ extended: true }));
