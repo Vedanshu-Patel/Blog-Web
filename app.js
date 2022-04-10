@@ -1,11 +1,11 @@
 let express = require('express');
 let app = express();
-
+const PORT = process.env.PORT || 3000;
 let BodyParser=require('body-parser');
 let mongoose = require('mongoose');
 let methodOverride= require('method-override');
 mongoose.connect("mongodb://localhost:27017/BlogApp");
-const PORT = process.env.PORT || 3000;
+
 app.use(express.static("public"));
 app.use(BodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
