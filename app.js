@@ -31,9 +31,9 @@ let BlogSchema=new mongoose.Schema({
 
 let Blog=mongoose.model('Blog',BlogSchema);
 
-// app.get('/',function (req,res) {
-//     res.redirect('/blogs');
-// });
+app.get('/',function (req,res) {
+    res.redirect('/blogs');
+});
 
 app.get('/blogs',function (req,res) {
     Blog.find({},function (err, blog) {
